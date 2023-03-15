@@ -1,0 +1,11 @@
+@media (min-width: 1280px) {
+	.nav {
+		.mobile {
+			display: none;
+		}
+
+		.nav-desktop {
+			display: block;
+		}
+	}
+}
