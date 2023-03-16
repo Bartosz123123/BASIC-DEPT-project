@@ -495,7 +495,13 @@ body {
 					.box {
 						.swipe-box {
 							display: flex;
+							flex-wrap: nowrap;
 							padding-left: 80px;
+							padding-right: 80px;
+							height: 42vw;
+							max-height: 638px;
+							overflow-x: scroll;
+
 							.boxes {
 								padding: 0 10px;
 								border-left: 1px solid #f9cdcd;
@@ -508,15 +514,80 @@ body {
 										justify-content: center;
 										align-items: center;
 										width: 26vw;
-										height: 33vw;
+										height: 32vw;
 										overflow: hidden;
 										.img {
-											width: 30vw;
-											height: 34vw;
+											width: 32vw;
+											height: 36vw;
+											transition: width 0.5s, height 0.5s;
+										}
+									}
+								}
+
+								.text-container {
+									padding: 20px 15px;
+									min-height: 250px;
+									background-color: #252422;
+									transition: transform 0.5s;
+									.title {
+										display: flex;
+										justify-content: space-between;
+										font-size: 2.2rem;
+										text-transform: uppercase;
+									}
+
+									.under-title {
+										display: block;
+										margin-top: 10px;
+										font-size: 1.2rem;
+										text-transform: uppercase;
+									}
+
+									.text-box {
+										margin-top: 25px;
+										opacity: 0;
+										transition: opacity 0.5s;
+
+										.link {
+											display: inline-block;
+											padding: 38px 20px 20px 0;
+											font-size: 1.3rem;
+											font-weight: 700;
+											color: #f9cdcd;
 										}
 									}
 								}
 							}
+						}
+
+						.swipe-box::-webkit-scrollbar {
+							display: none;
+						}
+
+						.active {
+							background-color: #fff;
+						}
+
+						.boxes:hover {
+							.center-box {
+								.img-box {
+									.img {
+										width: 28vw;
+										height: 33vw;
+									}
+								}
+							}
+							.text-container {
+								transform: translateY(-150px);
+
+								.text-box {
+									opacity: 1;
+								}
+							}
+						}
+
+						.boxes:last-of-type {
+							border-right: 1px solid #f9cdcd;
 						}
 					}
 				}
