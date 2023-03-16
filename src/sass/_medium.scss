@@ -12,6 +12,27 @@
 							}
 						}
 					}
+
+					.initiatives {
+						.boxes-container {
+							display: grid;
+							grid-template-columns: 1fr 1fr;
+							gap: 15px;
+							padding-bottom: 80px;
+
+							.boxes {
+								.img-box {
+									.medium-img {
+										display: block;
+									}
+
+									.small-img {
+										display: none;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
