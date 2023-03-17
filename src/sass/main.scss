@@ -435,6 +435,8 @@ body {
 				height: 100%;
 				background-color: #252422;
 				color: #f9cdcd;
+				opacity: 0;
+				visibility: hidden;
 
 				.animation-box {
 					.header {
@@ -479,6 +481,7 @@ body {
 							background-color: transparent;
 							border: 1px solid #fff;
 							border-radius: 50%;
+							cursor: pointer;
 
 							.exit {
 								position: absolute;
@@ -493,14 +496,18 @@ body {
 					}
 
 					.box {
+						transform: translateX(1400px);
 						.swipe-box {
+							position: relative;
 							display: flex;
 							flex-wrap: nowrap;
 							padding-left: 80px;
 							padding-right: 80px;
 							height: 42vw;
-							max-height: 638px;
+							max-height: 709px;
 							overflow-x: scroll;
+							overflow-y: hidden;
+							cursor: none;
 
 							.boxes {
 								padding: 0 10px;
@@ -558,6 +565,33 @@ body {
 									}
 								}
 							}
+
+							.last {
+								border-right: 1px solid #f9cdcd;
+							}
+
+							.circle {
+								position: fixed;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -150%);
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								background-color: #f9cdcd;
+								width: 140px;
+								height: 140px;
+								border-radius: 50%;
+								// z-index: 100;
+								pointer-events: none;
+								cursor: none;
+								.title-circle {
+									font-size: 1.4rem;
+									color: #000;
+									text-transform: uppercase;
+									pointer-events: none;
+								}
+							}
 						}
 
 						.swipe-box::-webkit-scrollbar {
@@ -590,9 +624,53 @@ body {
 							border-right: 1px solid #f9cdcd;
 						}
 					}
+
+					.slide-animation {
+						animation: slide 0.5s 0.4s forwards ease-in-out;
+					}
+					.animation-right {
+						position: fixed;
+						left: 0;
+						top: 0;
+						background-color: #252422;
+						width: 100vw;
+						height: 100vh;
+
+						z-index: 100;
+					}
+
+					.start-animation {
+						animation: startAnimation 0.4s 0.5s ease-in-out forwards;
+					}
 				}
 			}
+
+			.show-initiatives-desktop {
+				animation: showMenu 0.3s forwards;
+			}
+			.close-initiatives-desktop {
+				animation: closeMenu 0.3s forwards;
+			}
 		}
+	}
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(1400px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes startAnimation {
+	from {
+		width: 100vw;
+	}
+
+	to {
+		width: 0vw;
 	}
 }
 

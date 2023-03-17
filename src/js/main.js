@@ -10,6 +10,33 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
+const circle = document.querySelector('.circle');
+const cursorLine = document.querySelector('.cursor-line');
+const headerDesktop = document.querySelector('.animation-header');
+
+const closeInitiatives = document.querySelector('.close-initiatives');
+const initiativesDesktop = document.querySelector('.initiatives-desktop');
+const initiativesBtnDesktop = document.querySelector('.btn-dots');
+const animationRight = document.querySelector('.animation-right');
+const swipeBox = document.querySelector('.box');
+
+const closeInitiativesDesktop = () => {
+	initiativesDesktop.classList.remove('show-initiatives-desktop');
+	initiativesDesktop.classList.add('close-initiatives-desktop');
+	animationRight.classList.remove('start-animation');
+	swipeBox.classList.remove('slide-animation');
+
+	circle.style.top = 50 + '%';
+	circle.style.left = 50 + '%';
+};
+
+const showInitiativesDesktop = () => {
+	initiativesDesktop.classList.add('show-initiatives-desktop');
+	initiativesDesktop.classList.remove('close-initiatives-desktop');
+	animationRight.classList.add('start-animation');
+	swipeBox.classList.add('slide-animation');
+};
+
 const showInitiativesMenu = () => {
 	initiativesBox.classList.add('active-initiatives');
 };
@@ -54,8 +81,15 @@ slider.addEventListener('mousemove', (e) => {
 	slider.scrollLeft = scrollLeft - walk;
 });
 
+cursorLine.addEventListener('mousemove', (e) => {
+	const x = e.clientX;
+	const y = e.clientY;
 
-
+	circle.style.left = x + 'px';
+	circle.style.top = y + 'px';
+});
+closeInitiatives.addEventListener('click', closeInitiativesDesktop);
+initiativesBtnDesktop.addEventListener('click', showInitiativesDesktop);
 initiativesBtn.addEventListener('click', showInitiativesMenu);
 arrowBack.addEventListener('click', closeInitiativesMenu);
 menuBtn.addEventListener('click', handleMenu);
