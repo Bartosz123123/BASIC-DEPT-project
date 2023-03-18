@@ -20,6 +20,11 @@ const initiativesBtnDesktop = document.querySelector('.btn-dots');
 const animationRight = document.querySelector('.animation-right');
 const swipeBox = document.querySelector('.box');
 
+const mainCircle = document.querySelector('.main-circle');
+const hero = document.querySelector('.hero');
+const main = document.querySelector('.main');
+const desktopNav = document.querySelector('.nav-desktop');
+
 const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('show-initiatives-desktop');
 	initiativesDesktop.classList.add('close-initiatives-desktop');
@@ -48,6 +53,10 @@ const closeInitiativesMenu = () => {
 const closeMenu = () => {
 	menu.classList.remove('active-menu');
 	menu.classList.add('close-menu');
+	mainCircle.classList.remove('nav-is-active');
+
+	mainCircle.style.top = 50 + '%';
+	mainCircle.style.left = 50 + '%';
 
 	setTimeout(() => {
 		menu.classList.remove('close-menu');
@@ -57,6 +66,8 @@ const closeMenu = () => {
 const handleMenu = () => {
 	menu.classList.add('active-menu');
 	menu.classList.remove('close-menu');
+
+	mainCircle.classList.add('nav-is-active');
 };
 
 slider.addEventListener('mousedown', (e) => {
@@ -88,6 +99,25 @@ cursorLine.addEventListener('mousemove', (e) => {
 	circle.style.left = x + 'px';
 	circle.style.top = y + 'px';
 });
+
+main.addEventListener('mousemove', (e) => {
+	const x = e.pageX;
+	const y = e.pageY;
+
+	mainCircle.style.left = x + 'px';
+	mainCircle.style.top = y + 'px';
+});
+
+desktopNav.addEventListener('mousemove', () => {
+	mainCircle.style.top = 50 + '%';
+	mainCircle.style.left = 50 + '%';
+	mainCircle.classList.add('back-circle');
+
+	setTimeout(() => {
+		mainCircle.classList.remove('back-circle');
+	}, 300);
+});
+
 closeInitiatives.addEventListener('click', closeInitiativesDesktop);
 initiativesBtnDesktop.addEventListener('click', showInitiativesDesktop);
 initiativesBtn.addEventListener('click', showInitiativesMenu);
