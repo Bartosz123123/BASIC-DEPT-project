@@ -24,6 +24,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 1000;
 	.nav-box {
 		.container {
 			.first-menu {
@@ -741,7 +742,7 @@ body {
 		height: 100vh;
 		// position: relative;
 		overflow: hidden;
-		z-index: -10;
+		z-index: 100;
 
 		.back-video {
 			// position: absolute;
@@ -773,6 +774,7 @@ body {
 		background-color: #fff;
 		pointer-events: none;
 		cursor: none;
+		z-index: 101;
 
 		.title {
 			font-size: 1rem;

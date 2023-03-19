@@ -24,6 +24,7 @@ const mainCircle = document.querySelector('.main-circle');
 const hero = document.querySelector('.hero');
 const main = document.querySelector('.main');
 const desktopNav = document.querySelector('.nav-desktop');
+const imagies = document.querySelector('.images');
 
 const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('show-initiatives-desktop');
@@ -100,7 +101,7 @@ cursorLine.addEventListener('mousemove', (e) => {
 	circle.style.top = y + 'px';
 });
 
-main.addEventListener('mousemove', (e) => {
+hero.addEventListener('mousemove', (e) => {
 	const x = e.pageX;
 	const y = e.pageY;
 
@@ -109,6 +110,16 @@ main.addEventListener('mousemove', (e) => {
 });
 
 desktopNav.addEventListener('mousemove', () => {
+	mainCircle.style.top = 50 + '%';
+	mainCircle.style.left = 50 + '%';
+	mainCircle.classList.add('back-circle');
+
+	setTimeout(() => {
+		mainCircle.classList.remove('back-circle');
+	}, 300);
+});
+
+imagies.addEventListener('mousemove', () => {
 	mainCircle.style.top = 50 + '%';
 	mainCircle.style.left = 50 + '%';
 	mainCircle.classList.add('back-circle');
