@@ -1,6 +1,6 @@
 @media (min-width: 720px) {
 	.main {
-		.images {
+		.info {
 			.container {
 				.center-box {
 					.text-box {
@@ -41,6 +41,32 @@
 
 									.small-img {
 										display: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.main {
+		.picture {
+			.container {
+				.center-box {
+					.box {
+						.picture-box {
+							// width: calc(((768px + 16px - 5.4vw * 2) / 6 * 3) - 16px);
+							.link {
+								.frame {
+									width: calc(((100vw + 16px - 5.4vw * 2) / 6 * 3) - 16px);
+								}
+								.text-box {
+									.text {
+										max-width: calc(
+											((100vw + 16px - 5.4vw * 2) / 6 * 2) - 16px
+										);
+										font-size: 1.1rem;
 									}
 								}
 							}

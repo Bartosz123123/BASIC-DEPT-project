@@ -24,7 +24,7 @@ const mainCircle = document.querySelector('.main-circle');
 const hero = document.querySelector('.hero');
 const main = document.querySelector('.main');
 const desktopNav = document.querySelector('.nav-desktop');
-const imagies = document.querySelector('.images');
+const info = document.querySelector('.info');
 
 const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('show-initiatives-desktop');
@@ -107,6 +107,8 @@ hero.addEventListener('mousemove', (e) => {
 
 	mainCircle.style.left = x + 'px';
 	mainCircle.style.top = y + 'px';
+
+	mainCircle.classList.remove('back-circle');
 });
 
 desktopNav.addEventListener('mousemove', () => {
@@ -114,19 +116,19 @@ desktopNav.addEventListener('mousemove', () => {
 	mainCircle.style.left = 50 + '%';
 	mainCircle.classList.add('back-circle');
 
-	setTimeout(() => {
-		mainCircle.classList.remove('back-circle');
-	}, 300);
+	// setTimeout(() => {
+	// 	mainCircle.classList.remove('back-circle');
+	// }, 300);
 });
 
-imagies.addEventListener('mousemove', () => {
+info.addEventListener('mousemove', () => {
 	mainCircle.style.top = 50 + '%';
 	mainCircle.style.left = 50 + '%';
 	mainCircle.classList.add('back-circle');
 
-	setTimeout(() => {
-		mainCircle.classList.remove('back-circle');
-	}, 300);
+	// setTimeout(() => {
+	// 	mainCircle.classList.remove('back-circle');
+	// }, 300);
 });
 
 closeInitiatives.addEventListener('click', closeInitiativesDesktop);
