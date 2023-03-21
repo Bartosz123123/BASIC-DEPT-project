@@ -4,7 +4,21 @@
 			.container {
 				.center-box {
 					.text-box {
-						width: calc(((1024px + 16px - 5.4vw * 2) / 6 * 3.25) - 1.6px);
+						width: calc(((100vw + 16px - 5.4vw * 2) / 6 * 3.25) - 1.6px);
+					}
+				}
+			}
+		}
+		.featured {
+			.container {
+				.center-box {
+					.carousel-box {
+						ul {
+							padding-top: 12.5rem;
+							.item{
+								width: calc(((100vw + 16px - 5.4vw * 2) / 6 * 3) - 16px);
+							}
+						}
 					}
 				}
 			}
@@ -75,5 +89,7 @@
 				}
 			}
 		}
+
+		
 	}
 }
