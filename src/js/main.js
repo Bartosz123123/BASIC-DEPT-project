@@ -26,6 +26,11 @@ const main = document.querySelector('.main');
 const desktopNav = document.querySelector('.nav-desktop');
 const info = document.querySelector('.info');
 
+const progressContainer = document.querySelector('.carousel-progress');
+const progressBar = document.querySelector('.progress');
+const swipeFeatured = document.querySelector('.swipe-fretured');
+let root = document.documentElement;
+
 const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('show-initiatives-desktop');
 	initiativesDesktop.classList.add('close-initiatives-desktop');
@@ -115,20 +120,41 @@ desktopNav.addEventListener('mousemove', () => {
 	mainCircle.style.top = 50 + '%';
 	mainCircle.style.left = 50 + '%';
 	mainCircle.classList.add('back-circle');
-
-	// setTimeout(() => {
-	// 	mainCircle.classList.remove('back-circle');
-	// }, 300);
 });
 
 info.addEventListener('mousemove', () => {
 	mainCircle.style.top = 50 + '%';
 	mainCircle.style.left = 50 + '%';
 	mainCircle.classList.add('back-circle');
+});
 
-	// setTimeout(() => {
-	// 	mainCircle.classList.remove('back-circle');
-	// }, 300);
+swipeFeatured.addEventListener('mousedown', (e) => {
+	isDown = true;
+	startX = e.pageX - swipeFeatured.offsetLeft;
+	scrollLeft = swipeFeatured.scrollLeft;
+});
+
+swipeFeatured.addEventListener('mouseleave', () => {
+	isDown = false;
+});
+
+swipeFeatured.addEventListener('mouseup', () => {
+	isDown = false;
+});
+
+swipeFeatured.addEventListener('mousemove', (e) => {
+	if (!isDown) return;
+	e.preventDefault();
+	const x = e.pageX - swipeFeatured.offsetLeft;
+	const walk = x - startX;
+	swipeFeatured.scrollLeft = scrollLeft - walk;
+	// const scroll = swipeFeatured.scrollLeft;
+	// const leftToScroll =
+	// 	document.body.getBoundingClientRect().width + window.innerWidth;
+	// const scrollBarWidth = Math.floor((scroll / leftToScroll) * 100);
+	// console.log(scrollBarWidth);
+
+	// root.style.setProperty('--scroll-width', `${scrollBarWidth}%`);
 });
 
 closeInitiatives.addEventListener('click', closeInitiativesDesktop);
