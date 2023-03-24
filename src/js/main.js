@@ -31,6 +31,19 @@ const progressBar = document.querySelector('.progress');
 const swipeFeatured = document.querySelector('.swipe-fretured');
 let root = document.documentElement;
 
+const navBar = document.querySelector('.nav');
+let lastScrollTop;
+
+const magicScroll = () => {
+	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	if (scrollTop > lastScrollTop) {
+		navBar.style.transform = `matrix(1, 0, 0, 1, 0, -129)`;
+	} else {
+		navBar.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+	}
+	lastScrollTop = scrollTop;
+};
+
 const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('show-initiatives-desktop');
 	initiativesDesktop.classList.add('close-initiatives-desktop');
@@ -163,3 +176,4 @@ initiativesBtn.addEventListener('click', showInitiativesMenu);
 arrowBack.addEventListener('click', closeInitiativesMenu);
 menuBtn.addEventListener('click', handleMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
+window.addEventListener('scroll', magicScroll);
