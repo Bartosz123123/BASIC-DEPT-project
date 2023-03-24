@@ -42,6 +42,21 @@
 				}
 			}
 		}
+
+		.home {
+			.container {
+				.center-box {
+					.box {
+						.text-box {
+							.title-section {
+								font-size: 6.4rem;
+								letter-spacing: -1px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 @media (min-width: 1280px) {
@@ -152,6 +167,36 @@
 									}
 								}
 							}
+						}
+					}
+				}
+			}
+		}
+
+		.home {
+			.container {
+				.center-box {
+					.box {
+						.text-box {
+							.title-section {
+								font-size: 6.25vw;
+								letter-spacing: -2px;
+							}
+
+							.text {
+								font-size: 1.8rem;
+							}
+							.btn {
+								margin-top: 80px;
+							}
+						}
+					}
+
+					.down-box {
+						.btn-text {
+							max-width: calc(((100vw + 2rem - 8rem * 2) / 12 * 2) - 2rem);
+							font-size: 4.2rem;
+							line-height: 1.1;
 						}
 					}
 				}
