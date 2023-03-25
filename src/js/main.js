@@ -33,8 +33,28 @@ let root = document.documentElement;
 
 const navBar = document.querySelector('.nav');
 let lastScrollTop;
+const title = document.querySelector('.desktop');
 
-const magicScroll = () => {
+window.onscroll = function () {
+	const sticky = title.offsetTop;
+	const value = window.scrollY;
+	const sum = sticky - value;
+	let valueScroll = sum * -1;
+	const min = -260;
+
+	if (sum <= min) {
+		return;
+	} else if (sum <= 10) {
+		title.style.transform = `matrix(1, 0, 0, 1, 0, ${valueScroll})`;
+		title.style.padding = '10px 0 0 0';
+	} else if (sum > 10) {
+		title.style.padding = '0 0 0 0';
+	}
+
+	console.log(sum);
+};
+
+const magicNav = () => {
 	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	if (scrollTop > lastScrollTop) {
 		navBar.style.transform = `matrix(1, 0, 0, 1, 0, -129)`;
@@ -176,4 +196,4 @@ initiativesBtn.addEventListener('click', showInitiativesMenu);
 arrowBack.addEventListener('click', closeInitiativesMenu);
 menuBtn.addEventListener('click', handleMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
-window.addEventListener('scroll', magicScroll);
+window.addEventListener('scroll', magicNav);

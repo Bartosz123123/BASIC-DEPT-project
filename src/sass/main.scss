@@ -500,8 +500,12 @@ body {
 			color: #f9cdcd;
 			opacity: 0;
 			visibility: hidden;
+			z-index: 1000;
 
 			.animation-box {
+				position: relative;
+				height: 100vh;
+				background-color: #252422;
 				.header {
 					display: flex;
 					justify-content: space-between;
@@ -1081,8 +1085,10 @@ body {
 					}
 
 					.text-box {
+						position: relative;
 						margin-top: 50px;
 						text-transform: uppercase;
+						transform: translateY(1px);
 
 						.title-section {
 							font-size: 4rem;
@@ -1098,8 +1104,13 @@ body {
 						}
 
 						.btn {
+							position: relative;
 							margin-top: 25px;
 						}
+					}
+
+					.desktop {
+						display: none;
 					}
 				}
 
@@ -1110,11 +1121,13 @@ body {
 					padding-top: 100px;
 
 					.btn-text {
+						position: relative;
 						max-width: calc(((100vw + 1.6rem - 5.4vw * 2) / 6 * 2) - 1.6rem);
 						font-size: 2.4rem;
 						letter-spacing: -0.5px;
 						font-weight: bold;
 						text-transform: uppercase;
+						z-index: 1;
 					}
 
 					.btn {
