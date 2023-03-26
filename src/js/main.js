@@ -40,7 +40,7 @@ window.onscroll = function () {
 	const value = window.scrollY;
 	const sum = sticky - value;
 	let valueScroll = sum * -1;
-	const min = -260;
+	const min = -255;
 
 	if (sum <= min) {
 		return;

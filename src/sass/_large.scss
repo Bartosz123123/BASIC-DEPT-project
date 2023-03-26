@@ -202,5 +202,35 @@
 				}
 			}
 		}
+
+		.basic-links {
+			.container {
+				.center-box {
+					.boxes {
+						margin-top: 50px;
+						.box {
+							display: flex;
+
+							.img-box {
+								margin-right: 16px;
+								width: calc(((100vw + 2rem - 8rem * 2) / 12 * 4) - 2rem);
+							}
+
+							.text-box {
+								margin-top: 0;
+								width: calc(((100vw + 2rem - 8rem * 2) / 12 * 8) - 2rem);
+
+								.title {
+									width: calc(((100vw + 2rem - 8rem * 2) / 12 * 6) - 2rem);
+									.link {
+										font-size: 4.2rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
