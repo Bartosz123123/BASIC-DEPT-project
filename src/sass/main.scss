@@ -6,6 +6,7 @@
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -15,7 +16,6 @@ html {
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #0f0c3a3d;
-	scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -327,6 +327,7 @@ body {
 
 			.active-initiatives {
 				display: block;
+				height: 100vh;
 			}
 		}
 

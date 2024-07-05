@@ -103,9 +103,10 @@ const closeMenu = () => {
 };
 
 const handleMenu = () => {
+
 	menu.classList.add('active-menu');
 	menu.classList.remove('close-menu');
-
+	
 	mainCircle.classList.add('nav-is-active');
 };
 
