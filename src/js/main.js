@@ -4,6 +4,7 @@ const closeMenuBtn = document.querySelector('.btn-close');
 const arrowBack = document.querySelector('.arrow-back');
 const initiativesBox = document.querySelector('.initiatives');
 const initiativesBtn = document.querySelector('.initiatives-btn');
+const body = document.querySelector('body');
 
 const slider = document.querySelector('.swipe-box');
 let isDown = false;
@@ -69,6 +70,7 @@ const closeInitiativesDesktop = () => {
 	initiativesDesktop.classList.add('close-initiatives-desktop');
 	animationRight.classList.remove('start-animation');
 	swipeBox.classList.remove('slide-animation');
+	body.style.overflow = 'visible';
 
 	circle.style.top = 50 + '%';
 	circle.style.left = 50 + '%';
@@ -79,6 +81,7 @@ const showInitiativesDesktop = () => {
 	initiativesDesktop.classList.remove('close-initiatives-desktop');
 	animationRight.classList.add('start-animation');
 	swipeBox.classList.add('slide-animation');
+	body.style.overflow = 'hidden';
 };
 
 const showInitiativesMenu = () => {
@@ -93,6 +96,7 @@ const closeMenu = () => {
 	menu.classList.remove('active-menu');
 	menu.classList.add('close-menu');
 	mainCircle.classList.remove('nav-is-active');
+	body.style.overflow = 'visible';
 
 	mainCircle.style.top = 50 + '%';
 	mainCircle.style.left = 50 + '%';
@@ -103,10 +107,10 @@ const closeMenu = () => {
 };
 
 const handleMenu = () => {
-
 	menu.classList.add('active-menu');
 	menu.classList.remove('close-menu');
-	
+	body.style.overflow = 'hidden';
+
 	mainCircle.classList.add('nav-is-active');
 };
 
